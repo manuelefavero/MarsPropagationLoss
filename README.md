@@ -36,8 +36,8 @@ The `MarsPropagationLossModel` extends the `PropagationLossModel` in ns-3 and in
 - **Simulation:**
   - Implements `DoCalcRxPower()` to calculate the received power based on the Mars-specific propagation conditions.
 
-### 2. `aloha-throughput.cc`
-A sample ns-3 simulation script to test the throughput of Aloha protocol-based communication in Mars-like conditions. This file demonstrates how the Mars Propagation Loss Model integrates with existing ns-3 scenarios.
+### 2. `mars-simulation-example.cc`
+A sample ns-3 simulation script to test the throughput of Aloha protocol-based communication in Mars-like conditions using LoRaWAN. This file demonstrates how the Mars Propagation Loss Model integrates with existing ns-3 scenarios.
 
 ### 3. Base Files
 The repository includes the source (`.cc`) and header (`.h`) files for defining and implementing the Mars Propagation Loss Model.
@@ -80,6 +80,7 @@ This project is licensed under the GNU General Public License v2. See the LICENS
 
 ## References
 - [ns-3 Documentation](https://www.nsnam.org/documentation/)
+- [LoRaWAN ns-3 Module](https://github.com/signetlabdei/lorawan)
 - Research on Martian dust storm propagation effects.
 
 ## Contributing

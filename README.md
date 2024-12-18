@@ -45,7 +45,7 @@ The repository includes the source (`.cc`) and header (`.h`) files for defining 
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/manuelefavero/MarsPropagationLoss>
    ```
 2. Copy the `propagation-loss-model.cc` and `propagation-loss-model.h` files into the appropriate ns-3 directory (e.g., `src/propagation/model`).
 3. Add the `MarsPropagationLossModel` to the ns-3 build system by updating the `wscript` in the `src/propagation` folder.

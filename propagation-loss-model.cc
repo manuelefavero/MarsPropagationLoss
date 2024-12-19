@@ -1069,36 +1069,10 @@ MarsPropagationLossModel::DoCalcRxPower (double txPowerDbm,
                                          Ptr<MobilityModel> a,
                                          Ptr<MobilityModel> b) const
 {
-    //rifare
-    /*
-     * Friis free space equation:
-     * where Pt, Gr, Gr and P are in Watt units
-     * L is in meter units.
-     *
-     *    P     Gt * Gr * (lambda^2)
-     *   --- = ---------------------
-     *    Pt     (4 * pi * d)^2 * L
-     *
-     * Gt: tx gain (unit-less)
-     * Gr: rx gain (unit-less)
-     * Pt: tx power (W)
-     * d: distance (m)
-     * L: system loss
-     * lambda: wavelength (m)
-     *
-     * Here, we ignore tx and rx gain and the input and output values
-     * are in dB or dBm:
-     *
-     *                           lambda^2
-     * rx = tx +  10 log10 (-------------------)
-     *                       (4 * pi * d)^2 * L
-     *
-     * rx: rx power (dB)
-     * tx: tx power (dB)
-     * d: distance (m)
-     * L: system loss (unit-less)
-     * lambda: wavelength (m)
-     */
+
+//
+
+  
     double distance = a->GetDistanceFrom (b);
     NS_LOG_DEBUG("TEST_DEBUG: distance:"<<distance);
    

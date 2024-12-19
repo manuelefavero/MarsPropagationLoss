@@ -1106,29 +1106,18 @@ MarsPropagationLossModel::DoCalcRxPower (double txPowerDbm,
         return txPowerDbm;
     }
 
-    /*
-    double numerator = m_lambda * m_lambda;
-    double denominator = 16 * M_PI * M_PI * distance * distance * m_systemLoss;
-    double lossDb = -10 * log10 (numerator / denominator);
-    NS_LOG_DEBUG ("distance=" << distance<< "m, loss=" << lossDb <<"dB");
-    return txPowerDbm - std::max (lossDb, m_minLoss);
-     */
+ 
 
     NS_LOG_DEBUG("Transmitted Power: "<<txPowerDbm);
-    NS_LOG_DEBUG("N_T: "<<N_T<<", Mean particle radius (r): "<<r<<", wavelenght (lambda): "<<m_lambda<<", real part of dielettric permittivity of dust particles (m_epsilon_real): "<<m_epsilon_real<<", imaginary part of dielettric permittivity of dust particles (m_epsilon_imm): "<<m_epsilon_imm<<", distance between Tx and Rx (distance): "<<distance<<", model exponent (m_exponent): "<<m_exponent<<", reference distance: "<<m_referenceDistance<<", reference loss: "<<m_referenceLoss<<", M_PI: "<<M_PI);
-    double spreading_factor = 10 * m_exponent * std::log10(((4 * M_PI * distance)/m_lambda));
     NS_LOG_DEBUG("r^3: "<<std::pow(r,3));
+
+    double spreading_factor = 10 * m_exponent * std::log10(((4 * M_PI * distance)/m_lambda));
     double num = 1.029*1000000*m_epsilon_imm;
     double den = m_lambda*((m_epsilon_real+2)*(m_epsilon_real+2)+(m_epsilon_imm*m_epsilon_imm));
     double ads = num/den;
     double ads_final = (ads*N_T*std::pow(r,3))*distance*0.001;
 
-    //double ds_attenuation = 10*std::log10(ads_final); non dec'essere trasformata in db. Probabile moltiplicazione per la distanza
-/*10*std::log10(((1.029*1e6*m_epsilon_imm)/
-            (m_lambda*(((m_epsilon_real+2)*(m_epsilon_real+2))+(m_epsilon_imm*m_epsilon_imm))))
-                    *N_T*r*r*r);*/
-
-    //return txPowerDbm - spreading_factor - ds_attenuation;
+    
     NS_LOG_DEBUG("TEST_DEBUG: distance:"<<distance<<", spreading_factor: "<<spreading_factor<<", ds_attenuation: "<<ads_final);
     NS_LOG_DEBUG("rxPower: "<<txPowerDbm - (spreading_factor + ads_final));
     return txPowerDbm - (spreading_factor + ads_final);

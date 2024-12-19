@@ -1070,7 +1070,38 @@ MarsPropagationLossModel::DoCalcRxPower (double txPowerDbm,
                                          Ptr<MobilityModel> b) const
 {
 
-//
+    /*
+
+                            MODEL DESCRIPTION
+      We model the channel in terms of the Free-Space Path Loss (FSPL) L(d), 
+      as a function of the distance d between the transmitter and the receiver, 
+      and the attenuation A_ds(λ) due to dust storms, as a function of the
+      wavelength λ. Specifically, the total path loss on Mars can be
+      written as:
+
+      PL[dB] = 10 log(L(d)) + Ads(λ) · d  (Path Loss Formula)
+
+      Free-space path loss: For the Martian terrain, characterized by a 
+      medium-high density of rocks and numerous scatterers, the FSPL is 
+      modeled using a third-order exponent, compared to Earth where we have a second-order exponent. 
+      Therefore
+     
+      L(d) = (4πd/λ)^3 (Free Space Path Loss)
+
+      with λ = c/f, where c is the speed of light and f is the
+      carrier frequency.
+
+      Attenuation due to dust storms: Dust storms are a common weather 
+      phenomenon on the Martian surface, particularly in the southern hemisphere,
+      though they can extend across the entire planet. These storms are driven by
+      strong winds that lift dust particles into the atmosphere, and the resulting impact on 
+      wireless communications can be significant, especially for high-frequency signals.
+    
+                    1.029 × 10^6 * ε′′
+      A_ds(λ) = --------------------------  * N_T * r^3  (Dust Storm Attenuation)
+                λ · [(ε′ + 2)^2 + ε′′^2]
+
+    */
 
   
     double distance = a->GetDistanceFrom (b);

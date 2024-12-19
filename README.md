@@ -64,11 +64,11 @@ The repository includes the source (`.cc`) and header (`.h`) files for defining 
   ```cpp
   Ptr<MarsPropagationLossModel> marsLoss = CreateObject<MarsPropagationLossModel>();
   marsLoss->SetPathLossExponent(3);
-  marsLoss->SetN_T();
-  marsLoss->SetParticleRadius();
-  marsLoss->SetEpsilonReal();
-  marsLoss->SetEpsilonImm();
-  marsLoss->SetLambda();
+  marsLoss->SetN_T(8e7);
+  marsLoss->SetParticleRadius(3e-6);
+  marsLoss->SetEpsilonReal(2.9038);
+  marsLoss->SetEpsilonImm(0.1278);
+  marsLoss->SetLambda(299792458.0/868e-6);
   ```
 
 ## Authors

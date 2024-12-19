@@ -933,7 +933,9 @@ RangePropagationLossModel::DoAssignStreams (int64_t stream)
 
 // ------------------------------------------------------------------------- //
 
-
+/**
+ * Mars Propagation Loss Model by Canova Alessandro and Favero Manuele
+ */
 
 NS_OBJECT_ENSURE_REGISTERED (MarsPropagationLossModel);
 

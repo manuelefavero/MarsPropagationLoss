@@ -1000,15 +1000,15 @@ private:
     static Ptr<PropagationLossModel> CreateDefaultReference (void);
 
 
-    double N_T; //Total particle density
-    double r; //mean particle radius
-    double m_lambda; //wavelenght
-    double m_epsilon_real; //real part of dielettric permittivity of dust particles
-    double m_epsilon_imm; //imaginary part of dielettric permittivity of dust particles
-    double m_distance; //distance between Tx and Rx
-    double m_exponent; //!< model exponent
-    double m_referenceDistance; //!< reference distance
-    double m_referenceLoss; //!< reference loss
+    double N_T; // Total particle density
+    double r; // Mean particle radius
+    double m_lambda; //Wavelenght
+    double m_epsilon_real; //Real part of dielettric permittivity of dust particles
+    double m_epsilon_imm; //Imaginary part of dielettric permittivity of dust particles
+    double m_distance; //Distance between Tx and Rx
+    double m_exponent; //Model exponent
+    double m_referenceDistance; //Reference distance
+    double m_referenceLoss; //Reference loss
 };
 } //ns3 namespace
 #endif /* PROPAGATION_LOSS_MODEL_H */

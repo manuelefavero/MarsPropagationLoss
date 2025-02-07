@@ -81,7 +81,5 @@ This project is licensed under the GNU General Public License v2. See the LICENS
 ## References
 - [ns-3 Documentation](https://www.nsnam.org/documentation/)
 - [LoRaWAN ns-3 Module](https://github.com/signetlabdei/lorawan)
-- Research on Martian dust storm propagation effects.
+- [Performance Evaluation of IoT LoRa Networks on Mars Through ns-3 Simulations](https://arxiv.org/abs/2412.19549)
 
-## Contributing
-Feel free to submit issues or contribute to the development of this module by creating pull requests.
